@@ -1,12 +1,12 @@
 <?php
 
-include_once "Pasajero.php";
+
 
 /**pasajeros que pueden requerir servicios especiales como sillas de ruedas, 
  * asistencia para el embarque o desembarque, o comidas especiales para personas con alergias o restricciones alimentarias */
 
 
- class PasajerosEspeciales extends Pasajero {
+ class PasajeroEspecial extends Pasajero {
 
     private $sillaDeRuedas;
     private $asistenciaEmbarqueDesenbarque;
@@ -75,7 +75,7 @@ include_once "Pasajero.php";
 
     public function __toString(){
         $cadena= parent:: __toString();
-        $cadena.= "\n". $this->getSillaRuedas() ."\n". $this->getAsistencia()."\n".$this->getComidaEspecial();
+        $cadena.= "\n". $this->getSillaDeRuedas() ."\n". $this->getAsistenciaEmbarqueDesenbarque()()."\n".$this->getComidasEspeciales();
 
         return $cadena;
       }

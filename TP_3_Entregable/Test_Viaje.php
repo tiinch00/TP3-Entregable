@@ -106,7 +106,7 @@ switch ($opcion){
         echo "Ingrese las millas: ";
         $millas=trim(fgets(STDIN));
 
-       $objPasajero=new PasajeroVIP($nombrePasajero,$asiento,$viajeFrecuente,$millas);
+       $objPasajero=new PasajeroVIP($nombrePasajero,$asiento,$nroTicketPasaje,$viajeFrecuente,$millas);
        $precioViaje=$viaje->venderPasaje($objPasajero);
        echo "el precio del pasaje es de: ".$precioViaje ." pesos";
        }else{

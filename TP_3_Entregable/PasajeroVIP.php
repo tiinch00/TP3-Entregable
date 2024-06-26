@@ -1,6 +1,6 @@
 <?php
 
-include_once "Pasajero.php";
+
 
 //el número de viajero frecuente y cantidad de millas de pasajero
 

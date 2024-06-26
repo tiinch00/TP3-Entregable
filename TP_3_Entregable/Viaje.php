@@ -3,7 +3,8 @@
 
 
 
-class Viaje{
+class Viaje
+{
 
     private int $codigoViaje;
     private string $destinoViaje;
@@ -14,7 +15,8 @@ class Viaje{
     private $sumaCostosAbonados;
 
 
-    public function __construct($codigo,$destino,$cantMaximaPasajeros,$pasajeros,$responsableV,$costoViaje, $sumaCostos){
+    public function __construct($codigo, $destino, $cantMaximaPasajeros, $pasajeros, $responsableV, $costoViaje, $sumaCostos)
+    {
 
         $this->codigoViaje = $codigo;
         $this->destinoViaje = $destino;
@@ -22,14 +24,14 @@ class Viaje{
         $this->colPasajeros = $pasajeros;
         $this->objResponsableV = $responsableV;
         $this->costoDelViaje = $costoViaje;
-		$this->sumaCostosAbonados = $sumaCostos;
+        $this->sumaCostosAbonados = $sumaCostos;
     }
 
 
 
     /**
      * Get the value of codigoViaje
-     */ 
+     */
     public function getCodigoViaje()
     {
         return $this->codigoViaje;
@@ -39,17 +41,15 @@ class Viaje{
      * Set the value of codigoViaje
      *
      * @return  self
-     */ 
+     */
     public function setCodigoViaje($codigo)
     {
         $this->codigoViaje = $codigo;
-
-        
     }
 
     /**
      * Get the value of destinoViaje
-     */ 
+     */
     public function getDestinoViaje()
     {
         return $this->destinoViaje;
@@ -59,32 +59,34 @@ class Viaje{
      * Set the value of destinoViaje
      *
      * @return  self
-     */ 
+     */
     public function setDestinoViaje($destino)
     {
         $this->destinoViaje = $destino;
-
-      
     }
-    public function getCostoDelViaje() {
-		return $this->costoDelViaje;
-	}
+    public function getCostoDelViaje()
+    {
+        return $this->costoDelViaje;
+    }
 
-	public function setCostoDelViaje($costoViaje) {
-		$this->costoDelViaje = $costoViaje;
-	}
+    public function setCostoDelViaje($costoViaje)
+    {
+        $this->costoDelViaje = $costoViaje;
+    }
 
-    public function getSumaCostosAbonados() {
-		return $this->sumaCostosAbonados;
-	}
+    public function getSumaCostosAbonados()
+    {
+        return $this->sumaCostosAbonados;
+    }
 
-	public function setSumaCostosAbonados($sumaCostos) {
-		$this->sumaCostosAbonados = $sumaCostos;
-	}
+    public function setSumaCostosAbonados($sumaCostos)
+    {
+        $this->sumaCostosAbonados = $sumaCostos;
+    }
 
     /**
      * Get the value of cantMaximaPasajerosViaje
-     */ 
+     */
     public function getCantMaximaPasajerosViaje()
     {
         return $this->cantMaximaPasajerosViaje;
@@ -94,116 +96,130 @@ class Viaje{
      * Set the value of cantMaximaPasajerosViaje
      *
      * @return  self
-     */ 
+     */
     public function setCantMaximaPasajerosViaje($cantMaximaPasajeros)
     {
         $this->cantMaximaPasajerosViaje = $cantMaximaPasajeros;
-
-      
     }
 
-    
 
-     /**
+
+    /**
      * Get the value of colPasajeros
      */
-    public function getColPasajeros(){
+    public function getColPasajeros()
+    {
         return $this->colPasajeros;
     }
 
     /**
      * Set the value of colPasajeros
      */
-    public function setColPasajeros($pasajeros){
+    public function setColPasajeros($pasajeros)
+    {
         $this->colPasajeros = $pasajeros;
-
-       
     }
-      /**
+    /**
      * Get the value of objResponsableV
      */
-    public function getObjResponsableV() {
+    public function getObjResponsableV()
+    {
         return $this->objResponsableV;
     }
 
     /**
      * Set the value of objResponsableV
      */
-    public function setObjResponsableV($responsableV) {
+    public function setObjResponsableV($responsableV)
+    {
         $this->objResponsableV = $responsableV;
-       
     }
     /** retorna una coleccion en string
      * @param array
      * @return string
      */
 
-    public function retornarCadena($coleccion){
-		$cadena= "";
+    public function retornarCadena($coleccion)
+    {
+        $cadena = "";
 
-		foreach($coleccion as $elemento){
+        foreach ($coleccion as $elemento) {
 
-			$cadena = $cadena . " ". $elemento ."\n";
-		}
-		return $cadena;
-	}
-    
+            $cadena = $cadena . " " . $elemento . "\n";
+        }
+        return $cadena;
+    }
 
-    public function __toString(){
-        $cadena = "Cogido el viaje: " . $this->getCodigoViaje()."\n";
-        $cadena .= "Destino del viaje: " . $this->getDestinoViaje()."\n";
-        $cadena .= "Cantidad maxima de pasajeros: " . $this->getCantMaximaPasajerosViaje()."\n";
-        $cadena .= "Los pasajeros son: " .$this->retornarCadena($this->getColPasajeros())."\n";
-        $cadena .= "Costo base del pasaje " .$this->getCostoDelViaje()."\n";
-        $cadena .= "Suma de costos ". $this->getSumaCostosAbonados()."\n";
+
+    public function __toString()
+    {
+        $cadena = "Cogido el viaje: " . $this->getCodigoViaje() . "\n";
+        $cadena .= "Destino del viaje: " . $this->getDestinoViaje() . "\n";
+        $cadena .= "Cantidad maxima de pasajeros: " . $this->getCantMaximaPasajerosViaje() . "\n";
+        $cadena .= "Los pasajeros son: " . $this->retornarCadena($this->getColPasajeros()) . "\n";
+        $cadena .= "Costo base del pasaje " . $this->getCostoDelViaje() . "\n";
+        $cadena .= "Suma de costos " . $this->getSumaCostosAbonados() . "\n";
 
         return $cadena;
     }
-    
 
 
 
-    
 
-    public function estaPasajero($pasajero){
+    /**
+     * Busco con un while que no este el pasajero ya cargado en la coleccion
+     * @param object $pasajero
+     * @return boolean
+     */
+    public function estaPasajero($pasajero)
+    {
 
         $esta = false;
-        $colPasajeros =$this->getColPasajeros();
+        $colPasajeros = $this->getColPasajeros();
         $i = 0;
-        while($i<count($colPasajeros)&& !$esta){
+        while ($i < count($colPasajeros) && !$esta) {
 
-            if ($colPasajeros[$i]->getDocumentoPasajero() == $pasajero->getDocumentoPasajero()){
-                
+            if ($colPasajeros[$i]->getDocumentoPasajero() == $pasajero->getDocumentoPasajero()) {
+
                 $esta = true;
             }
             $i++;
-
         }
 
         return $esta;
     }
-
-    public function agregarPasajero($pasajero){
-
+    /**
+     * Agrega un pasajero a la coleccion de pasajeros
+     * @param object pasajero
+     * @return boolean
+     */
+    public function agregarPasajero($pasajero)
+    {
         $agrego = false;
         $colPasajeros = $this->getColPasajeros();
-        $cantMaximaPasajeros = $this->getCantMaximaPasajerosViaje();
+        //verificamos que la cantidad de pasajeros se menor a la disponible
+        if ($this->hayPasajesDisponible()) {
+            //verifico que mientras estaPasajero sea falso
+            if (!$this->estaPasajero($pasajero)) {
 
-        if (count($colPasajeros)<$cantMaximaPasajeros){
-            if(!$this->estaPasajero($pasajero)){
+                //agrego pasajero al array 
+                $colPasajeros[] = $pasajero;
 
-            $colPasajeros[]= $pasajero;
-
-            $agrego = true;
-
-            $this->setColPasajeros($colPasajeros);
+                $agrego = true;
+                //seteo con el pasajero ya cargado
+                $this->setColPasajeros($colPasajeros);
             }
-
         }
         return $agrego;
     }
 
-    public function mostrarPasajero($documentoPasajero){
+    /** 
+     * Buscamos a un pasajero por su numero de dni en la coleccion de pasajeros
+     * @param int $documentoPasajero
+     * @return object
+     */
+    public function mostrarPasajero($documentoPasajero)
+    {
 
 
         $pasajero = null;
@@ -211,70 +227,70 @@ class Viaje{
         $pasajeroNro = 0;
         $colPasajeros = $this->getColPasajeros();
 
-        if ($documentoPasajero != null){
+        if ($documentoPasajero != null) {
 
-            while ($pasajeroNro<count($colPasajeros)&&!$encontrado){
+            while ($pasajeroNro < count($colPasajeros) && !$encontrado) {
 
                 if ($colPasajeros[$pasajeroNro]->getDocumentoPasajero() === $documentoPasajero) {
                     $encontrado = true;
                     $pasajero = $colPasajeros[$pasajeroNro];
-                   
                 }
                 $pasajeroNro++;
-
             }
             return $pasajero;
-        } 
-     }
+        }
+    }
 
-     /**Modificar la clase viaje para almacenar el costo del viaje, la suma de los costos abonados por los pasajeros e implementar el método 
+    /**Modificar la clase viaje para almacenar el costo del viaje, la suma de los costos abonados por los pasajeros e implementar el método 
      * venderPasaje($objPasajero) que debe incorporar el pasajero a la colección de pasajeros ( solo si hay espacio disponible), 
      * actualizar los costos abonados y retornar el costo final que deberá ser abonado por el pasajero.
 
 
-     Implemente la función hayPasajesDisponible() que retorna verdadero si la cantidad de pasajeros del viaje es menor 
-     a la cantidad máxima de pasajeros y falso caso contrario */
-
-     public function venderPasaje($objPasajero){
-
-        $costoViaje =$this->getCostoDelViaje();
-        $coleccionPasajeros =$this->getColPasajeros();
-        $sumaCostos = $this->getSumaCostosAbonados();
-        $precioFinal = 0;
-
-        if ($this->hayPasajesDisponible()){
-
-            $coleccionPasajeros[]= $objPasajero;
-            $this->setColPasajeros($coleccionPasajeros);
-            $incremento=$objPasajero->darPorcentajeIncremento();
-            $costoViaje=$costoViaje+($costoViaje*$incremento);
-            $sumaCostos=$sumaCostos+$costoViaje;
-            $this->setSumaCostosAbonados($sumaCostos);
-            $preciofinal=$costoViaje;
-        }
-        return $preciofinal;
-            
-        }
-
     
 
-    public function hayPasajesDisponible(){
+    
+    /**
+     * Devuelve el costo del viaje e incorpora al pasajero al arreglo a travez de agregarPasajero
+     * @param object $oBjPasajero
+     * @return float
+     */
+    public function venderPasaje($objPasajero)
+    {
+
+        $costoViaje = $this->getCostoDelViaje();
+        $sumaCostos = $this->getSumaCostosAbonados();
+
+
+        if ($this->agregarPasajero($objPasajero)) {
+
+            $sumaCostos += $costoViaje;
+
+            $this->setSumaCostosAbonados($sumaCostos);
+        }
+
+        return $costoViaje;
+    }
+
+    /* Implemente la función hayPasajesDisponible() que retorna verdadero si la cantidad de pasajeros del viaje es menor 
+     a la cantidad máxima de pasajeros y falso caso contrario */
+    /**
+     * Nos aseguramos que haya la menos 1 pasaje disponible para la venta
+     * @return boolean
+     */
+    public function hayPasajesDisponible()
+    {
 
         $hayLugar = false;
 
-        $cantidadMaxPasajeros =$this->getCantMaximaPasajerosViaje();
+        $cantidadMaxPasajeros = $this->getCantMaximaPasajerosViaje();
         $coleccionPasajeros = $this->getColPasajeros();
-        
 
-        if (count($coleccionPasajeros)<$cantidadMaxPasajeros){
+
+        if (count($coleccionPasajeros) < $cantidadMaxPasajeros) {
 
             $hayLugar = true;
-
         }
 
         return $hayLugar;
-
     }
-
-
-    }
+}
